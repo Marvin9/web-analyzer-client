@@ -36,9 +36,7 @@ export default () => (
         <Route path="/">
           <Home />
         </Route>
-        <Route path="/rules">
-
-        </Route>
+        <Route path="/rules" />
       </Switch>
     </div>
 
