@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "lint": "eslint ./src"
   },
   "license": "MIT",
   "dependencies": {
