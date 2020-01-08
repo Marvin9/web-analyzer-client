@@ -35,7 +35,7 @@ export default function Report() {
     <>
       <div className="row">
         {rules.map((rule) => (
-          <div className="col-sm-3 mb-3">
+          <div key={`${rule.name}_${Date.now()}`} className="col-sm-3 mb-3">
             <Card rule={rule} />
           </div>
         ))}
