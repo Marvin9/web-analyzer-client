@@ -3,7 +3,7 @@ import React from 'react';
 export default function GetURL() {
   return (
     <>
-      <div className="jumbotron mt-3 pt-5" style={{ background: 'none' }}>
+      <div className="jumbotron mt-3 pt-2 pb-2" style={{ background: 'none' }}>
         <h1 className="text-center">Analyze SEO</h1>
         <br />
         <form className="form-inline justify-content-center">
