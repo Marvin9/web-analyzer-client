@@ -29,4 +29,5 @@ Card.propTypes = {
     description: PropTypes.string.isRequired,
     follow: PropTypes.bool.isRequired,
   }).isRequired,
+  changeModal: PropTypes.func.isRequired,
 };

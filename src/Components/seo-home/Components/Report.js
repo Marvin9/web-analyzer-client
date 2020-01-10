@@ -36,7 +36,7 @@ export default function Report() {
 
   const changeModal = (index) => {
     changeCurrentModal(index);
-  }
+  };
 
   return (
     <>
