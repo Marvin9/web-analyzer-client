@@ -8,14 +8,14 @@ export default function Modal({ rule }) {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">
-              { rule.title }
+              { rule.ruleName }
             </h5>
             <button className="close" type="button" data-dismiss="modal">
               <span>&times;</span>
             </button>
           </div>
           <div className="modal-body">
-            { rule.description }
+            { rule.desc }
           </div>
           <div className="modal-footer">
             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -28,7 +28,7 @@ export default function Modal({ rule }) {
 
 Modal.propTypes = {
   rule: PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.string,
+    ruleName: PropTypes.string,
+    desc: PropTypes.string,
   }).isRequired,
 };

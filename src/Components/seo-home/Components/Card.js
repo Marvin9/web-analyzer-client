@@ -7,10 +7,10 @@ export default function Card({ rule, changeModal }) {
     <>
       <div className={`card text-white ${rule.follow ? 'bg-success' : 'bg-danger'}`} style={{ cursor: 'pointer' }}>
         <div className="card-header">
-          { rule.title }
+          { rule.ruleName }
         </div>
         <div className="card-body">
-          { rule.description }
+          { rule.desc }
         </div>
         {/* eslint-disable-next-line */}
         <div className={`card-footer ${rule.follow ? 'hover-success' : 'hover-danger'} text-center`} data-toggle="modal" data-target="#ruleModal" onClick={changeModal} >
@@ -25,9 +25,9 @@ export default function Card({ rule, changeModal }) {
 
 Card.propTypes = {
   rule: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    follow: PropTypes.bool.isRequired,
+    ruleName: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    follow: PropTypes.bool,
   }).isRequired,
   changeModal: PropTypes.func.isRequired,
 };

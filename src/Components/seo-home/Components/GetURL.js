@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-export default function GetURL() {
+export default function GetURL({ dispatchUrl }) {
+  const [url, changeUrl] = useState('');
   return (
     <>
       <div className="jumbotron mt-3 pt-2 pb-2" style={{ background: 'none' }}>
@@ -13,8 +15,14 @@ export default function GetURL() {
               id="urlInput"
               className="form-control form-control-lg"
               placeholder="github.com/Marvin9"
+              value={url}
+              onChange={(e) => changeUrl(e.target.value)}
             />
-            <button type="button" className="btn btn-primary btn-lg ml-sm-2 mt-2 mt-sm-0">
+            <button
+              type="button"
+              className="btn btn-primary btn-lg ml-sm-2 mt-2 mt-sm-0"
+              onClick={() => { dispatchUrl(url); }}
+            >
               Analyze
             </button>
           </div>
@@ -23,3 +31,7 @@ export default function GetURL() {
     </>
   );
 }
+
+GetURL.propTypes = {
+  dispatchUrl: PropTypes.func.isRequired,
+};
