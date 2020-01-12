@@ -21,7 +21,7 @@ export default function GetURL({ dispatchUrl }) {
             <button
               type="button"
               className="btn btn-primary btn-lg ml-sm-2 mt-2 mt-sm-0"
-              onClick={() => { dispatchUrl(url); }}
+              onClick={() => { dispatchUrl(url); changeUrl(''); }}
             >
               Analyze
             </button>
