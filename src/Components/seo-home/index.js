@@ -13,7 +13,7 @@ export default function index() {
     fetch(`${api}/analyze?url=${url}`)
       .then((res) => res.json())
       .then((generatedReport) => {
-        if (generatedReport.error) { } // todo handle error
+        if (generatedReport.error) { }  // eslint-disable-line
         else changeReport([...generatedReport]);
       })
       .catch((err) => {
@@ -35,15 +35,14 @@ export default function index() {
               role="status"
               style={{
                 width: '4rem',
-                height: '4rem'
+                height: '4rem',
               }}
             >
               <span className="sr-only">Loading...</span>
             </div>
           </div>
         )
-        : <Report report={report} />
-      }
+        : <Report report={report} /> }
     </>
   );
 }
