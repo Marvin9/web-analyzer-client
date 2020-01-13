@@ -5,16 +5,24 @@ import Report from './Components/Report';
 export default function index() {
   const [report, changeReport] = useState([]);
   const [loader, changeLoader] = useState(false);
+  const [error, changeError] = useState({ err: false, url: '' });
 
   const api = 'http://localhost:3000/api';
 
   const getReport = (url) => {
     changeLoader(true);
+    changeError({ err: false, url: '' });
+
     fetch(`${api}/analyze?url=${url}`)
       .then((res) => res.json())
       .then((generatedReport) => {
-        if (generatedReport.error) { }  // eslint-disable-line
-        else changeReport([...generatedReport]);
+        if (generatedReport.error) {
+          changeReport([]);
+          changeError({
+            err: true,
+            url,
+          });
+        } else changeReport([...generatedReport]);
       })
       .catch((err) => {
         throw err;
@@ -42,7 +50,7 @@ export default function index() {
             </div>
           </div>
         )
-        : <Report report={report} /> }
+        : <Report report={report} error={error} /> }
     </>
   );
 }

@@ -3,12 +3,21 @@ import PropTypes from 'prop-types';
 import Card from './Card';
 import Modal from './Modal';
 
-export default function Report({ report }) {
+export default function Report({ report, error }) {
   const [currentModal, changeCurrentModal] = useState(0);
 
   const changeModal = (index) => {
     changeCurrentModal(index);
   };
+
+  if (error.err) {
+    return (
+      <div className="alert alert-danger">
+        Cannot fetch that URL : &nbsp;
+        { error.url }
+      </div>
+    );
+  }
 
   if (report.length) {
     return (
@@ -29,4 +38,8 @@ export default function Report({ report }) {
 
 Report.propTypes = {
   report: PropTypes.arrayOf(PropTypes.object).isRequired,
+  error: PropTypes.shape({
+    err: PropTypes.bool,
+    url: PropTypes.string,
+  }).isRequired,
 };
