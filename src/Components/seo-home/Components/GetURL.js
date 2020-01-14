@@ -23,7 +23,7 @@ export default function GetURL({ dispatchUrl }) {
               placeholder="github.com/Marvin9"
               value={url}
               onChange={(e) => changeUrl(e.target.value)}
-              onKeyDown={(e) => { if (e.which === 13) submitUrl(); } }
+              onKeyDown={(e) => { if (e.which === 13) submitUrl(); }}
             />
             <button
               type="button"
