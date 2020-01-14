@@ -3,12 +3,18 @@ import PropTypes from 'prop-types';
 
 export default function GetURL({ dispatchUrl }) {
   const [url, changeUrl] = useState('');
+
+  const submitUrl = () => {
+    dispatchUrl(url);
+    changeUrl('');
+  };
+
   return (
     <>
       <div className="jumbotron mt-3 pt-2 pb-2" style={{ background: 'none' }}>
         <h1 className="text-center">Analyze SEO</h1>
         <br />
-        <form className="form-inline justify-content-center">
+        <form className="form-inline justify-content-center" onSubmit={(e) => e.preventDefault()}>
           <div className="form-group">
             <input
               type="text"
@@ -17,11 +23,12 @@ export default function GetURL({ dispatchUrl }) {
               placeholder="github.com/Marvin9"
               value={url}
               onChange={(e) => changeUrl(e.target.value)}
+              onKeyDown={(e) => { if (e.which === 13) submitUrl(); } }
             />
             <button
               type="button"
               className="btn btn-primary btn-lg ml-sm-2 mt-2 mt-sm-0"
-              onClick={() => { dispatchUrl(url); changeUrl(''); }}
+              onClick={() => { submitUrl(); }}
             >
               Analyze
             </button>
