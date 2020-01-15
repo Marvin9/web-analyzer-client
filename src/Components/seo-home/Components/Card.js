@@ -8,6 +8,8 @@ export default function Card({ rule, changeModal }) {
       <div className={`card text-white ${rule.follow ? 'bg-success' : 'bg-danger'}`} style={{ cursor: 'pointer' }}>
         <div className="card-header">
           { rule.ruleName }
+          &nbsp; &nbsp;
+          { rule.follow ? '✅' : '❌' }
         </div>
         <div className="card-body">
           { rule.desc }
