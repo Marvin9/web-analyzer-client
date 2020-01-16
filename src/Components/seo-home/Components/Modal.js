@@ -16,6 +16,11 @@ export default function Modal({ rule }) {
           </div>
           <div className="modal-body">
             { rule.desc }
+            <br />
+            <br />
+            <code>
+              { rule.example }
+            </code>
           </div>
           <div className="modal-footer">
             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -30,5 +35,6 @@ Modal.propTypes = {
   rule: PropTypes.shape({
     ruleName: PropTypes.string,
     desc: PropTypes.string,
+    example: PropTypes.string,
   }).isRequired,
 };
