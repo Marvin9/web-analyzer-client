@@ -5,6 +5,7 @@ import {
   Route,
 } from 'react-router-dom';
 import Home from './Components/seo-home';
+import Rules from './Components/seo-rules';
 
 export default () => (
   <>
@@ -33,10 +34,12 @@ export default () => (
 
     <div className="container">
       <Switch>
-        <Route path="/">
+        <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/rules" />
+        <Route path="/rules" exact>
+          <Rules />
+        </Route>
       </Switch>
     </div>
 
