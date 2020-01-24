@@ -1,11 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import colors from '../../../themeStore';
 import '../../../../public/css/card.css';
+
+const cardBackColor = (follow) => {
+  const successObj = {
+    cursor: 'pointer',
+    backgroundColor: colors.light,
+  };
+
+  if (follow) return successObj;
+  return Object.assign(successObj, {
+    backgroundColor: colors.royalLight,
+  });
+};
 
 export default function Card({ rule, changeModal }) {
   return (
     <>
-      <div className={`card text-white ${rule.follow ? 'bg-success' : 'bg-danger'}`} style={{ cursor: 'pointer' }}>
+      <div className="card text-white" style={cardBackColor(rule.follow)}>
         <div className="card-header">
           { rule.ruleName }
           &nbsp; &nbsp;

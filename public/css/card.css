@@ -1,7 +1,3 @@
-.hover-success:hover {
-  background: #238c3b;
-}
-
-.hover-danger:hover {
-  background: #a82d3a;
+.hover-success:hover, .hover-danger:hover {
+  background: #9C4AFF;
 }

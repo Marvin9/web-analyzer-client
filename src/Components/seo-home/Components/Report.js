@@ -22,7 +22,7 @@ export default function Report({ report, error }) {
   if (report.length) {
     return (
       <>
-        <div className="row">
+        <div className="row" id="report">
           {report.map((rule, index) => (
             <div key={`${rule.ruleName}_${Date.now() + index}`} className="col-sm-3 mb-3">
               <Card rule={rule} changeModal={() => changeModal(index)} />

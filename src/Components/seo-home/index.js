@@ -20,11 +20,21 @@ export default function index({ report, dispatchChangeReport }) {
       .then((generatedReport) => {
         if (generatedReport.error) {
           dispatchChangeReport([]);
+
           changeError({
             err: true,
             url,
           });
-        } else dispatchChangeReport([...generatedReport]);
+        } else {
+          dispatchChangeReport([...generatedReport]);
+
+          setTimeout(() => {
+            window.scrollTo({
+              top: document.querySelector('#analyze-seo-form').scrollHeight,
+              behavior: 'smooth',
+            });
+          }, 100);
+        }
       })
       .catch((err) => {
         throw err;
