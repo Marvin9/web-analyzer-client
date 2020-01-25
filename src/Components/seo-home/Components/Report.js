@@ -14,7 +14,9 @@ export default function Report({ report, error }) {
     return (
       <div className="alert alert-danger">
         Cannot fetch that URL : &nbsp;
-        { error.url }
+        <b>
+          { error.url }
+        </b>
       </div>
     );
   }

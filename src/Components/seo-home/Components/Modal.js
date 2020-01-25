@@ -1,11 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import colors from '../../../themeStore';
+
+const modalStyle = {
+  background: colors.dark,
+  color: '#fff',
+  boxShadow: '-4px 4px 16px -6px rgba(0,0,0,0.41)',
+};
 
 export default function Modal({ rule }) {
   return (
     <div className="modal fade" id="ruleModal" tabIndex="-1" aria-hidden="true">
       <div className="modal-dialog" role="document">
-        <div className="modal-content">
+        <div className="modal-content" style={modalStyle}>
           <div className="modal-header">
             <h5 className="modal-title">
               { rule.ruleName }
@@ -23,7 +30,7 @@ export default function Modal({ rule }) {
             </code>
           </div>
           <div className="modal-footer">
-            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" className="btn btn-secondary" data-dismiss="modal" style={modalStyle}>Close</button>
           </div>
         </div>
       </div>

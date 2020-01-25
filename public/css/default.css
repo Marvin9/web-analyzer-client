@@ -16,3 +16,18 @@ input::placeholder {
   box-shadow: 4px 3px 18px -6px rgba(0,0,0,0.35);
 }
 
+.card-subtitle {
+  color: #fff!important;
+}
+
+code {
+  color: #fff;
+}
+
+.alert {
+  text-align: center;
+  background: #9C4AFF;
+  color: #fff;
+  border:none;
+  box-shadow: 6px 8px 25px -16px rgba(0,0,0,0.41);
+}
