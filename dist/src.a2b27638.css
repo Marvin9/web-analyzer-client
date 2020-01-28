@@ -1,0 +1,40 @@
+.hover-success:hover, .hover-danger:hover {
+  background: #9C4AFF;
+}
+
+button, button:focus, button:active, input, input:focus {
+  outline: none!important;
+  border: none!important;
+}
+
+input::placeholder {
+  color: #fff!important;
+}
+
+.analyze-btn {
+  box-shadow: 4px 3px 18px -6px rgba(0,0,0,0.11);
+  transition: 0.5s;
+}
+
+.analyze-btn:hover {
+  box-shadow: 4px 3px 18px -6px rgba(0,0,0,0.35);
+}
+
+.card-subtitle {
+  color: #fff!important;
+}
+
+code {
+  color: #fff;
+}
+
+.alert {
+  text-align: center;
+  background: #9C4AFF;
+  color: #fff;
+  border:none;
+  box-shadow: 6px 8px 25px -16px rgba(0,0,0,0.41);
+}
+
+
+/*# sourceMappingURL=/src.a2b27638.css.map */
