@@ -1,1 +1,1 @@
-export default 'http://localhost:3000/api';
+export default 'https://marvin9-web-analyzer-server.glitch.me/api';
