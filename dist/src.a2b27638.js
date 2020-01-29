@@ -34007,7 +34007,7 @@ function createReactContext(defaultValue, calculateChangedBits) {
 var index = _react.default.createContext || createReactContext;
 var _default = index;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","@babel/runtime/helpers/inheritsLoose":"node_modules/@babel/runtime/helpers/inheritsLoose.js","prop-types":"node_modules/prop-types/index.js","gud":"node_modules/gud/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js"}],"node_modules/path-to-regexp/node_modules/isarray/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","@babel/runtime/helpers/inheritsLoose":"node_modules/@babel/runtime/helpers/inheritsLoose.js","prop-types":"node_modules/prop-types/index.js","gud":"node_modules/gud/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js"}],"node_modules/isarray/index.js":[function(require,module,exports) {
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
@@ -34440,7 +34440,7 @@ function pathToRegexp (path, keys, options) {
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
 
-},{"isarray":"node_modules/path-to-regexp/node_modules/isarray/index.js"}],"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js":[function(require,module,exports) {
+},{"isarray":"node_modules/isarray/index.js"}],"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34510,11 +34510,14 @@ var MEMO_STATICS = {
 };
 var TYPE_STATICS = {};
 TYPE_STATICS[reactIs.ForwardRef] = FORWARD_REF_STATICS;
+TYPE_STATICS[reactIs.Memo] = MEMO_STATICS;
 
 function getStatics(component) {
+  // React v16.11 and below
   if (reactIs.isMemo(component)) {
     return MEMO_STATICS;
-  }
+  } // React v16.12 and above
+
 
   return TYPE_STATICS[component['$$typeof']] || REACT_STATICS;
 }
@@ -36159,7 +36162,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _default = 'http://localhost:3000/api';
+var _default = 'https://marvin9-web-analyzer-server.glitch.me/api';
 exports.default = _default;
 },{}],"src/Components/Spinner.js":[function(require,module,exports) {
 "use strict";
@@ -36519,7 +36522,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51214" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49705" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
