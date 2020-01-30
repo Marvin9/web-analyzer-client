@@ -10,4 +10,5 @@ scripts:
   - npm run lint
 
 deploy:
-  - curl -X POST -d {} https://api.netlify.com/build_hooks/5e32ca2be5dc6c0ae1d7465f
+  provider: script
+  script: curl -X POST -d {} https://api.netlify.com/build_hooks/5e32ca2be5dc6c0ae1d7465f
